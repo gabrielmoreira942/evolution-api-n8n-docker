@@ -16,8 +16,15 @@ services:
   redis:
     image: redis:alpine
     ports:
-      - "6380:6380"
+      - "6350:6350"
     environment:
       REDIS_USER: default
       REDIS_PASSWORD: default
     restart: always
+volumes:
+  n8n_data:
+
+# ADICIONADO: Secção de redes
+networks:
+  n8n-network:
+    driver: bridge
